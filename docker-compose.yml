@@ -5,25 +5,25 @@ services:
     build: services/pg_denormalized
     volumes:
       - ./:/tmp/db
-      - pg_denormalized:/var/lib/postgresql/data
+      - pg_denormalized:/var/lib/postgresql
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=pass
       - PGUSER=postgres
     ports:
-      - 1:5432
+      - 1115:5432
 
   pg_normalized:
     build: services/pg_normalized
     volumes:
       - ./:/tmp/db
-      - pg_normalized:/var/lib/postgresql/data
+      - pg_normalized:/var/lib/postgresql
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=pass
       - PGUSER=postgres
     ports:
-      - 2:5432
+      - 1116:5432
 
 volumes:
     pg_normalized:
